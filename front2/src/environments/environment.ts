@@ -6,14 +6,14 @@
 export const environment = {
 
   production: false,
-    firebase: {
-      apiKey: 'AIzaSyAdeIr5aaCcmHDDQWWn8QZCTDVXpRxm51c',
-      authDomain: 'walmoo-loop.firebaseapp.com',
-      databaseURL: 'https://walmoo-loop.firebaseio.com',
-      projectId: 'walmoo-loop',
-      storageBucket: 'walmoo-loop.appspot.com',
-      messagingSenderId: '672932042999'
-    },
+  firebase: {
+    apiKey: 'AIzaSyAobLzoAPyh8w0w-tXGr14jp4CyJHRrez0',
+    authDomain: 'rain-on-mars.firebaseapp.com',
+    databaseURL: 'https://rain-on-mars.firebaseio.com',
+    projectId: 'rain-on-mars',
+    storageBucket: 'rain-on-mars.appspot.com',
+    messagingSenderId: '352420792528'
+  },
 
   // http://localhost:5000
   functionsURL: ' http://localhost:5000/stripe-elements/us-central1',
