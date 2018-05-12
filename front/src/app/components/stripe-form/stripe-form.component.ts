@@ -10,7 +10,7 @@ import { TrymeService } from '../tryme.service';
   selector: 'app-stripe-form',
   template: `
   <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
-    <input type="number" formControlName="amount" value="5"><br>
+    <input type="text" formControlName="amount" value="5"><br>
     <input type="text" formControlName="name" placeholder="Jane Doe">
     <div id="card-element" class="field"></div>
     <button type="submit">

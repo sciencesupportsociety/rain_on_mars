@@ -6,9 +6,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   color: #fff;
-  background-color: #3F4E59;;
+  background-color: #3F4E59;
   overflow: hidden;
-  padding: 3rem 0 2rem 5rem;
+  background-image: url("assets/background.png");
+  background-repeat: repeat-x;
 }
 
 a {
