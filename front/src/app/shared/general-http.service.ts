@@ -1,6 +1,5 @@
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { AppScope } from './appScope';
+import 'rxjs';
 
 export abstract class GeneralHttpService {
 
@@ -15,31 +14,27 @@ export abstract class GeneralHttpService {
     return this.http
       .get(path)
       .toPromise()
-      .then(validate);
+      // .then(validate);
   }
 
-  protected post(path: string, params?: any): Promise<any> {
+  post(path: string, params?: any, options?: RequestOptions): Promise<Response> {
     return this.http
-      .post(path, JSON.stringify(params), this.defaultRequestOprions)
+    .post(path, JSON.stringify(params), options || this.defaultRequestOprions)
       .toPromise()
-      .then(validate);
+      // .then(validate);
   }
 }
 
 export function validate(response: Response): any {
   if (response.status < 200 || response.status >= 300) {
-    throw "incorrect http response";
+    throw new Error(`incorrect http response: ${response}` );
   }
+
   const data: ResponseData = response.json();
-  if (data.status != 0) {
-    throw "incorrect response data";
+  if (data.status !== 0) {
+    throw new Error(`incorrect response data: ${JSON.stringify(data)}`);
   }
   return data.data;
-}
-
-export interface RequestData {
-  type_id: string;
-  data: any;
 }
 
 export interface ResponseData {
@@ -47,6 +42,3 @@ export interface ResponseData {
   data: any;
 }
 
-export const requestData = {
-  type_id: 'qwe499bmksadr06cmjo496dsw445',
-}
