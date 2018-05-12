@@ -13,7 +13,7 @@ import { TrymeService } from '../tryme.service';
     </div>
     <nav class="navigation shadowed">
       <a href="#">base</a>
-      <a href="#">active projevcts</a>
+      <a href="#">active projects</a>
       <a href="#">our jury</a>
     </nav>
   </div>

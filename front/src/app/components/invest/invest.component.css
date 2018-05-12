@@ -5,17 +5,31 @@
   font-family: Play;
   font-size: 80px;
   line-height: 93px;
-  grid-area: money;
+  z-index: 1;
 }
 
-.you-can-transform-th-copy-2 {
+.you-can-transform {
   height: 84px;
   width: 487px;
   color: #ffffff;
   font-family: Play;
   font-size: 36px;
   line-height: 42px;
-  grid-area: transform;
+  z-index: 1;
+}
+
+.invest-button {
+  height: 76px;
+  width: 331px;
+  border-radius: 4px;
+  background-color: #52c41a;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 27px;
+  text-align: center;
+  z-index: 1;
 }
 .mars {
   position: absolute;
@@ -23,11 +37,8 @@
 }
 
 .invest {
-  display: grid;
-  grid-template-areas:
-    'money money money money logo social'
-    'transform transform transform navigation navigation navigation';
-
+  display: flex;
+  flex-direction: column;
   padding-top: 60px;
   padding-left: 80px;
 }

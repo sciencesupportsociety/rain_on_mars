@@ -7,9 +7,13 @@ body {
   font-weight: 100;
   color: #fff;
   background-color: #3F4E59;
-  overflow: hidden;
+  overflow: scroll;
   background-image: url("assets/background.png");
   background-repeat: repeat;
+}
+
+p {
+  margin: 0;
 }
 
 a {
