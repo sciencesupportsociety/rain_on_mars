@@ -1,0 +1,27 @@
+.logo {
+  grid-area: logo;
+  height: 48px;
+  width: 270px;
+}
+.social {
+  grid-area: social
+}
+.navigation {
+  grid-area: navigation
+}
+.header {
+  display: grid;
+  grid-template-areas:
+    'logo logo logo logo logo social'
+    'navigation navigation navigation navigation navigation navigation';
+  grid-gap: 10px;
+}
+
+.social_icon {
+  padding: 5px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
