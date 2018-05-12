@@ -18,7 +18,7 @@ export class TrymeService extends GeneralHttpService {
   };
 
   passToken(token: string, amount: number) {
-    console.log("Hello", this.paths.passToken);
+    console.log("Hello", this.paths.passToken, {token, amount});
     const res = this.post(this.paths.passToken, {token, amount});
     console.log(res);
     return res;

@@ -9,12 +9,14 @@ import { NgxStripeModule } from 'ngx-stripe';
 import { environment } from '../environments/environment';
 import { StripeFormComponent } from './components/stripe-form/stripe-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InvestComponent } from './components/invest/invest.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     StripeFormComponent,
+    InvestComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,9 @@ import { AppStateService } from './shared/app-state.service';
   selector: 'app-root',
   template: `
   <app-header></app-header>
+  <app-invest></app-invest>
+
+  <br><br>
   <app-stripe-form></app-stripe-form>
 `,
   styleUrls: ['./app.component.css']

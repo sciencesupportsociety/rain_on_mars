@@ -6,9 +6,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   color: #fff;
-  background-color: black;
+  background-color: #3F4E59;;
   overflow: hidden;
-  margin: 2rem;
+  padding: 3rem 0 2rem 5rem;
 }
 
 a {
