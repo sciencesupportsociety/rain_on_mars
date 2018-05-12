@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { StripeFormComponent } from './components/stripe-form/stripe-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestComponent } from './components/invest/invest.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { InvestComponent } from './components/invest/invest.component';
     HeaderComponent,
     StripeFormComponent,
     InvestComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  height: 885px;
+  width: 1414px
+}
+
+.container * {
+  position: absolute;
+}
+
+.text {
+  width: 500px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.text * {
+  position: relative;
+  color: #3F4E59;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.text .header {
+  font-weight: bold;
+}
+
+.text button {
+  height: 37px;
+  width: 161px;
+  border-radius: 4px;
+  background-color: #88A4C0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+#text2 {
+  top: 265px;
+  left: 495px;
+}
+
+#dot1 {
+  top: 84px;
+  left: 1125px;
+}
+
+#dot2 {
+  top: 237px;
+  left: 469px;
+}
+
+#dot3 {
+  top: 466px;
+  left: 160px;
+}
+
+#dot4 {
+  top: 521px;
+  left: 1119px;
+}
+
+#dot5 {
+  top: 570px;
+  left: 510px;
+}

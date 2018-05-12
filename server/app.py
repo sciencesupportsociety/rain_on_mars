@@ -1,6 +1,7 @@
-from flask import Flask, request, Response
-import stripe
 import configparser
+
+import stripe
+from flask import Flask, request
 
 config = configparser.ConfigParser()
 config.read('config.ini')
