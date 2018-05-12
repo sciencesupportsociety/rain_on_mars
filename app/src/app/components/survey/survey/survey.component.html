@@ -1,0 +1,82 @@
+<app-survey-header></app-survey-header>
+<div class="container">
+  <form action="">
+  <div class="row">
+
+  </div>
+
+  <div class="row question" >
+    <div class="col-xs-12" >
+      <h5 class="row question-header">1. Kā vērtē pasākuma lektorus?</h5>
+      <app-rating class="row"
+        prefix="mmm"
+        (onRatingUpdated)="this.survey.lectorsRate = $event">
+      </app-rating>
+    </div>
+  </div>
+
+  <div class="row question" >
+    <div class="col-xs-12" >
+      <h5 class="row question-header">2. Kā vērtē pasākuma organizēšanu?</h5>
+      <app-rating class="row"
+        prefix="iii"
+        (onRatingUpdated)="this.survey.organizationRate = $event">
+      </app-rating>
+    </div>
+  </div>
+
+  <div class="row question" >
+    <div class="col-xs-12" >
+      <h5 class="row question-header">3. Kas patika vislabāk?</h5>
+      <textarea name="improve" [(ngModel)]="survey.whatEnjoyMost" placeholder="Enter your answer here..."></textarea>
+    </div>
+  </div>
+
+  <div class="row question" >
+    <div class="col-xs-12" >
+      <h5 class="row question-header">4. Vai guvi gaidīto?</h5>
+      <ul>
+        <li >
+          <input
+            type="radio"
+            id="opt_s2_1"
+            checked="true"
+            [(ngModel)]="survey.isAsExpected"
+            name="selector2"
+            value="Jā">
+          <label for="opt_s2_1">Jā</label>
+          <div class="check"></div>
+        </li>
+
+        <li>
+          <input type="radio"
+                 id="opt_s2_2"
+                 [(ngModel)]="survey.isAsExpected"
+                 name="selector2"
+                 value="Daļēji">
+          <label for="opt_s2_2">Daļēji</label>
+          <div class="check"><div class="inside"></div></div>
+        </li>
+
+        <li>
+          <input
+            type="radio"
+            id="opt_s2_3"
+            [(ngModel)]="survey.isAsExpected"
+            name="selector2"
+            value="Nē">
+          <label for="opt_s2_3">Nē</label>
+          <div class="check"><div class="inside"></div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row submit" >
+    <div class="col-xs-12" >
+      <a  *ngIf="!formSubmitted" [@FadeInOut]="!formSubmitted" (click)="submitSurvey()" class="btn btn-lg btn-primary">{{translate('send')}}</a>
+      <h4 class="thankYou" *ngIf="formSubmitted" [@FadeInOut]="formSubmitted">{{translate('thank-you')}}</h4>
+    </div>
+  </div>
+  </form>
+</div>

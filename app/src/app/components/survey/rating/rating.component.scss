@@ -1,0 +1,14 @@
+.rating {
+  margin-top: 1rem;
+  margin-right: 0;
+
+  .star {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1rem;
+    background: url("/assets/vendor/icons/star-gr.svg") no-repeat;
+  }
+}
+
