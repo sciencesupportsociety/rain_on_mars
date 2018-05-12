@@ -23,6 +23,7 @@ import { AppStateService } from './shared/app-state.service';
   </li>
 </ul>
 <app-header></app-header>
+<app-stripe-form></app-stripe-form>
 `,
   styleUrls: ['./app.component.css']
 })

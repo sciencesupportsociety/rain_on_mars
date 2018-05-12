@@ -4,15 +4,24 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NgxStripeModule } from 'ngx-stripe';
+
+import { environment } from '../environments/environment';
+import { StripeFormComponent } from './components/stripe-form/stripe-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    StripeFormComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    NgxStripeModule.forRoot(environment.stripePublishable),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
