@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TrymeService } from './tryme.service';
+import { TrymeService } from '../tryme.service';
 
 @Component({
   selector: 'app-header',

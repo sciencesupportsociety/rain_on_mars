@@ -1,6 +1,7 @@
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { GeneralHttpService } from '../../shared/general-http.service';
+import { GeneralHttpService } from '../shared/general-http.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +14,18 @@ export class TrymeService extends GeneralHttpService {
 
   private paths = {
     try: 'https://jsonplaceholder.typicode.com/posts',
-    passToken: '',
+    passToken: `${environment.host}/invest`,
   };
 
-  passToken(token: string) {
-    return this.post(this.paths.passToken, {token});
+  passToken(token: string, amount: number) {
+    console.log("Hello", this.paths.passToken);
+    const res = this.post(this.paths.passToken, {token, amount});
+    console.log(res);
+    return res;
   }
 
   try(): Promise<Response> {
     const res = this.post(this.paths.try, {bebe: 'bebee'});
-    console.log(res);
     return res;
   }
 }
