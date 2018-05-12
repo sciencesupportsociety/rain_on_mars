@@ -30,6 +30,7 @@
   line-height: 27px;
   text-align: center;
   z-index: 1;
+  cursor: pointer;
 }
 .mars {
   position: absolute;
