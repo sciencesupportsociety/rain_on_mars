@@ -66,11 +66,9 @@ export class StripeFormComponent implements OnInit {
       .createToken(this.card, { name })
       .subscribe(token => {
         if (token) {
-          // Use the token to create a charge or a customer
           // https://stripe.com/docs/charges
           console.log('Success', token);
         }
-        console.log('after', token);
       });
   }
 }

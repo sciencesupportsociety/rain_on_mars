@@ -12,11 +12,16 @@ export class TrymeService extends GeneralHttpService {
   }
 
   private paths = {
-    try: 'https://jsonplaceholder.typicode.com/posts'
+    try: 'https://jsonplaceholder.typicode.com/posts',
+    passToken: '',
   };
 
+  passToken(token: string) {
+    return this.post(this.paths.passToken, {token});
+  }
+
   try(): Promise<Response> {
-    const res = this.post(this.paths.try, {bebe: "bebee"});
+    const res = this.post(this.paths.try, {bebe: 'bebee'});
     console.log(res);
     return res;
   }
