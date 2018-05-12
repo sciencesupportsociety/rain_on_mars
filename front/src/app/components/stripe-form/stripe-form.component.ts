@@ -9,8 +9,8 @@ import {Response} from '@angular/http';
 @Component({
   selector: 'app-stripe-form',
   template: `
-    <form novalidate [formGroup]="stripeTest">
-      <input type="number" formControlName="amount" value="5"><br>
+    <form style="width: 400px" novalidate [formGroup]="stripeTest">
+      <input type="number" formControlName="amount"><br>
       <input type="text" formControlName="name" placeholder="Jane Doe">
       <div id="card-element" class="field"></div>
       <button type="button" (click)="investMonthly()">INVEST MONTHLY</button>
@@ -38,8 +38,8 @@ export class StripeFormComponent implements OnInit {
 
   ngOnInit() {
     this.stripeTest = this.fb.group({
-      name: ['', [Validators.required]],
-      amount: ['', [Validators.required]]
+      name: ['Kriss', [Validators.required]],
+      amount: [5, [Validators.required]]
     });
     this.stripeService.elements(this.elementsOptions)
       .subscribe(elements => {
@@ -49,8 +49,8 @@ export class StripeFormComponent implements OnInit {
           this.card = this.elements.create('card', {
             style: {
               base: {
-                iconColor: '#666EE8',
-                color: '#31325F',
+                iconColor: '#fff',
+                color: '#fff',
                 lineHeight: '40px',
                 fontWeight: 300,
                 fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
@@ -67,11 +67,11 @@ export class StripeFormComponent implements OnInit {
   }
 
   investMonthly() {
-    this.basicInvest(this.trymeService.investMonthly)
+    this.basicInvest(this.trymeService.investMonthly);
   }
 
   invest() {
-    this.basicInvest(this.trymeService.invest)
+    this.basicInvest(this.trymeService.invest);
   }
 
   private basicInvest(investFnc: (id: string, amount: number) => Promise<Response>) {
