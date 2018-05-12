@@ -1,22 +1,21 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StripeService, Elements, Element as StripeElement, ElementsOptions } from 'ngx-stripe';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Element as StripeElement, Elements, ElementsOptions, StripeService} from 'ngx-stripe';
 
-import { TrymeService } from '../tryme.service';
+import {TrymeService} from '../tryme.service';
+import {Response} from "@angular/http";
 
 
 @Component({
   selector: 'app-stripe-form',
   template: `
-  <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
-    <input type="number" formControlName="amount" value="5"><br>
-    <input type="text" formControlName="name" placeholder="Jane Doe">
-    <div id="card-element" class="field"></div>
-    <button type="submit">
-      BUY
-    </button>
-  </form>
+    <form novalidate [formGroup]="stripeTest">
+      <input type="number" formControlName="amount" value="5"><br>
+      <input type="text" formControlName="name" placeholder="Jane Doe">
+      <div id="card-element" class="field"></div>
+      <button type="button" (click)="investMonthly()">INVEST MONTHLY</button>
+      <button type="button" (click)="invest()">INVEST</button>
+    </form>
   `
 })
 export class StripeFormComponent implements OnInit {
@@ -34,7 +33,8 @@ export class StripeFormComponent implements OnInit {
     private fb: FormBuilder,
     private stripeService: StripeService,
     private trymeService: TrymeService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.stripeTest = this.fb.group({
@@ -66,14 +66,24 @@ export class StripeFormComponent implements OnInit {
       });
   }
 
-  buy() {
+  investMonthly() {
+    debugger;
+    this.basicInvest(this.trymeService.investMonthly)
+  }
+
+  invest() {
+    debugger;
+    this.basicInvest(this.trymeService.invest)
+  }
+
+  private basicInvest(investFnc: (id: string, amount: number) => Promise<Response>) {
     const name = this.stripeTest.get('name').value;
     const amount = this.stripeTest.get('amount').value;
     this.stripeService
-      .createToken(this.card, { name })
+      .createToken(this.card, {name})
       .subscribe(token => {
-         if (token) {
-          this.trymeService.passToken(token.token.id, amount);
+        if (token) {
+          investFnc(token.token.id, amount);
           console.log('Success', token);
         }
       });
