@@ -12,7 +12,7 @@ import { StripeFormComponent } from './components/stripe-form/stripe-form.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestComponent } from './components/invest/invest.component';
 import { MapComponent } from './components/map/map.component';
-import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
+import { DonateDialogComponent } from './components/donate-dialog/donate-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.com
     StripeFormComponent,
     InvestComponent,
     MapComponent,
-    ModalDialogComponent,
+    DonateDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +31,7 @@ import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.com
     FormsModule,
     ReactiveFormsModule
   ],
+  entryComponents: [DonateDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

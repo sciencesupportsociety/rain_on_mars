@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ModalDialogService } from 'ngx-modal-dialog';
+import { DonateDialogComponent } from '../donate-dialog/donate-dialog.component';
+
 
 @Component({
   selector: 'app-invest',
@@ -23,7 +25,11 @@ export class InvestComponent implements OnInit {
   openModal() {
     this.modalService.openDialog(this.viewRef, {
       title: 'Some modal title',
-      childComponent: SimpleModalComponent
+      childComponent: DonateDialogComponent,
+      settings: {
+        overlayClass: 'overlayDonate',
+        modalClass: 'donateDialog',
+      }
     });
   }
 }

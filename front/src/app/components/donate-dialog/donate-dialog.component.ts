@@ -3,20 +3,20 @@ import { IModalDialog, IModalDialogButton, IModalDialogOptions } from 'ngx-modal
 import 'rxjs';
 
 @Component({
-  selector: 'app-modal-dialog',
+  selector: 'app-donate-dialog',
   template: `
-  <div>
-  modal window
-  </div>
+    <div class="donate">
+      <app-stripe-form></app-stripe-form>
+    </div>
   `,
-  styleUrls: ['./modal-dialog.component.css']
+  styleUrls: ['./donate-dialog.component.css']
 })
-export class ModalDialogComponent implements IModalDialog {
+export class DonateDialogComponent implements IModalDialog {
   actionButtons: IModalDialogButton[];
+  settings = {};
 
   constructor() {
     this.actionButtons = [
-      { text: 'Close' }, // no special processing here
       { text: 'I will always close', onAction: () => true },
       { text: 'I never close', onAction: () => false }
     ];

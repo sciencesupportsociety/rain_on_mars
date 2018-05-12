@@ -9,7 +9,6 @@ import { AppStateService } from './shared/app-state.service';
     <app-invest></app-invest>
     <app-map></app-map>
     <br><br>
-    <app-stripe-form></app-stripe-form>
     </div>
   `,
   styleUrls: ['./app.component.css']
