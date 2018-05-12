@@ -1,7 +1,7 @@
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Injectable } from '@angular/core';
-import { GeneralHttpService } from '../shared/general-http.service';
-import { environment } from '../../environments/environment';
+import {Http, Headers, RequestOptions, Response} from '@angular/http';
+import {Injectable} from '@angular/core';
+import {GeneralHttpService} from '../shared/general-http.service';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,19 @@ export class TrymeService extends GeneralHttpService {
 
   private paths = {
     try: 'https://jsonplaceholder.typicode.com/posts',
-    passToken: `${environment.host}/invest`,
+    invest: `${environment.host}/invest`,
+    investMonthly: `${environment.host}/invest-monthly`,
   };
 
-  passToken(token: string, amount: number) {
-    console.log("Hello", this.paths.passToken, {token, amount});
-    const res = this.post(this.paths.passToken, {token, amount});
+  invest = (token: string, amount: number): Promise<Response> => {
+    console.log('Hello', this.paths.invest, {token, amount});
+    const res = this.post(this.paths.invest, {token, amount});
+    console.log(res);
+    return res;
+  }
+  investMonthly = (token: string, amount: number): Promise<Response> => {
+    console.log('Hello', this.paths.investMonthly, {token, amount});
+    const res = this.post(this.paths.investMonthly, {token, amount});
     console.log(res);
     return res;
   }
