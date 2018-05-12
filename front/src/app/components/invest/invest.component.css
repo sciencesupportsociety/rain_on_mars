@@ -1,7 +1,3 @@
-.invest {
-  padding-top: 60px;
-  padding-left: 80px;
-}
 .your-money-i {
   height: 279px;
   width: 752px;
@@ -9,6 +5,7 @@
   font-family: Play;
   font-size: 80px;
   line-height: 93px;
+  grid-area: money;
 }
 
 .you-can-transform-th-copy-2 {
@@ -18,4 +15,15 @@
   font-family: Play;
   font-size: 36px;
   line-height: 42px;
+  grid-area: transform;
+}
+
+.invest {
+  display: grid;
+  grid-template-areas:
+    'money money money money logo social'
+    'transform transform transform navigation navigation navigation';
+
+  padding-top: 60px;
+  padding-left: 80px;
 }
