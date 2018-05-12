@@ -11,6 +11,13 @@ app = Flask(__name__)
 
 @app.route('/invest', methods=['POST'])
 def charge():
+    """
+    call to
+        url = /invest
+        body = {"amount":100, "token":"token-from-stripe.js"}
+        amount in cents
+    return 204 or 500
+    """
     data = request.json
     amount = data['amount']
     token = data['token']
