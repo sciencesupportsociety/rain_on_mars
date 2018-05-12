@@ -1,0 +1,22 @@
+.container {
+  margin: 5rem 0;
+  position: relative;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.text-wrapper p {
+  flex: 50%;
+  min-width: 400px;
+  padding-right: 2rem;
+}
+
+.text-wrapper .short {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+}

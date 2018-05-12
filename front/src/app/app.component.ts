@@ -7,6 +7,7 @@ import { AppStateService } from './shared/app-state.service';
     <div class='container'>
     <app-header></app-header>
     <app-invest></app-invest>
+    <app-mission></app-mission>
     <app-map></app-map>
     <br><br>
     </div>

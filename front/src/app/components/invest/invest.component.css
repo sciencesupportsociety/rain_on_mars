@@ -1,10 +1,6 @@
 .your-money-i {
-  height: 279px;
   width: 752px;
   color: #ffffff;
-  font-family: Play;
-  font-size: 5rem;
-  line-height: 5.6rem;
   z-index: 1;
 }
 
@@ -12,9 +8,6 @@
   height: 84px;
   width: 487px;
   color: #ffffff;
-  font-family: Play;
-  font-size: 2rem;
-  line-height: 2.5rem;
   z-index: 1;
 }
 

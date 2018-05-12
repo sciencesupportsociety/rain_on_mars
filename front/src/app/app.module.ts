@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestComponent } from './components/invest/invest.component';
 import { MapComponent } from './components/map/map.component';
 import { DonateDialogComponent } from './components/donate-dialog/donate-dialog.component';
+import { MissionComponent } from './components/mission/mission.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DonateDialogComponent } from './components/donate-dialog/donate-dialog.
     InvestComponent,
     MapComponent,
     DonateDialogComponent,
+    MissionComponent,
   ],
   imports: [
     BrowserModule,

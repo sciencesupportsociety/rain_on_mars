@@ -45,5 +45,5 @@
   grid-template-areas:
     'logo logo logo logo logo social'
     'navigation navigation navigation navigation navigation navigation';
-  grid-gap: 60px;
+  grid-gap: 20px;
 }
