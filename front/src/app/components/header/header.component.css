@@ -7,21 +7,44 @@
   grid-area: social
 }
 .navigation {
-  grid-area: navigation
+  grid-area: navigation;
+  font-family: Play;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 27px;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
 }
+
+.navigation > a {
+  margin-right: 4rem;
+}
+
+.navigation > a::before { /* add the new bullet point */
+  display: inline-block;
+  content: '';
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+  background: url("/assets/ico-dot.png") no-repeat;
+}
+
+.social_icon {
+  padding: 0.3rem;
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
 .header {
   display: grid;
   grid-template-areas:
     'logo logo logo logo logo social'
     'navigation navigation navigation navigation navigation navigation';
-  grid-gap: 10px;
-}
-
-.social_icon {
-  padding: 5px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
+  grid-gap: 60px;
+  padding-left: 80px;
 }

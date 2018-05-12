@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #fff;
+  background-color: black;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+.shadowed {
+  text-shadow: 0 1px 6px 0 rgba(0,0,0,0.45);
+}
