@@ -17,6 +17,10 @@
   line-height: 42px;
   grid-area: transform;
 }
+.mars {
+  position: absolute;
+  right: 0%;
+}
 
 .invest {
   display: grid;
