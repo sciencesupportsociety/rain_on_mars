@@ -17,6 +17,7 @@ import { MissionComponent } from './components/mission/mission.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { RoverComponent } from './components/rover/rover.component';
 import { ValidatorsModule } from 'ngx-validators';
+import { InvestButtonComponent } from './components/invest-button/invest-button.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ValidatorsModule } from 'ngx-validators';
     MissionComponent,
     GeneratorComponent,
     RoverComponent,
+    InvestButtonComponent,
   ],
   imports: [
     BrowserModule,

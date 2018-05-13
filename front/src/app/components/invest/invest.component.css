@@ -11,20 +11,6 @@
   z-index: 1;
 }
 
-.invest-button {
-  height: 76px;
-  width: 331px;
-  border-radius: 4px;
-  background-color: #52c41a;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  line-height: 27px;
-  text-align: center;
-  z-index: 1;
-  cursor: pointer;
-}
 .mars {
   position: absolute;
   right: 0%;

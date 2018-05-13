@@ -1,10 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Element as StripeElement, Elements, ElementsOptions, StripeService} from 'ngx-stripe';
 
 import {TrymeService} from '../tryme.service';
 import {Response} from '@angular/http';
-
 
 @Component({
   selector: 'app-stripe-form',
@@ -14,12 +13,15 @@ import {Response} from '@angular/http';
       <span *ngIf="stripeTest.hasError('numberRequired')">Needs to be a number</span>
       <input type="text" formControlName="name" placeholder="Name on card">
       <div id="card-element" class="field"></div>
-      <button type="submit" (click)="investMonthly()">INVEST MONTHLY</button>
-      <button type="submit" (click)="invest()">INVEST</button>
+      <button *ngIf="!isOneTimePayment" type="submit" (click)="investMonthly()">{{"invest monthly" | uppercase }}</button>
+      <button *ngIf="isOneTimePayment"  type="submit" (click)="invest()">{{"invest" | uppercase }}</button>
     </form>
   `
 })
 export class StripeFormComponent implements OnInit {
+  @Input()
+  isOneTimePayment;
+
   elements: Elements;
   card: StripeElement;
 
@@ -68,6 +70,8 @@ export class StripeFormComponent implements OnInit {
           this.card.mount('#card-element');
         }
       });
+
+      console.log('stripe', this.isOneTimePayment);
   }
 
   investMonthly() {
