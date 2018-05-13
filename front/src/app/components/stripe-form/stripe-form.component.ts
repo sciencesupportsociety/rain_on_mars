@@ -8,7 +8,7 @@ import {Response} from '@angular/http';
 @Component({
   selector: 'app-stripe-form',
   template: `
-    <form style="width: 400px" novalidate [formGroup]="stripeTest">
+    <form *ngIf="!paymentFinished" style="width: 400px" novalidate [formGroup]="stripeTest">
       <input type="text" formControlName="amount" placeholder="Amount" isNumber><br>
       <span *ngIf="stripeTest.hasError('numberRequired')">Needs to be a number</span>
       <input type="text" formControlName="name" placeholder="Name on card">
@@ -21,11 +21,14 @@ import {Response} from '@angular/http';
         {{"invest" | uppercase }}
       </button>
     </form>
+    <div *ngIf="paymentFinished">Thank You!</div>
   `
 })
 export class StripeFormComponent implements OnInit {
   @Input()
   isOneTimePayment;
+
+  paymentFinished = false;
 
   elements: Elements;
   card: StripeElement;
@@ -75,8 +78,6 @@ export class StripeFormComponent implements OnInit {
           this.card.mount('#card-element');
         }
       });
-
-      console.log('stripe', this.isOneTimePayment);
   }
 
   investMonthly() {
@@ -94,7 +95,12 @@ export class StripeFormComponent implements OnInit {
       .createToken(this.card, {name})
       .subscribe(token => {
         if (token) {
-          investFnc(token.token.id, amount);
+          investFnc(token.token.id, amount)
+            .then(res => {
+              if (res.status >= 200 && res.status < 300) {
+                this.paymentFinished = true;
+              }
+            });
           console.log('Success', token);
         }
       });
