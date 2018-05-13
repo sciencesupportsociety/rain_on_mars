@@ -12,7 +12,7 @@ import 'rxjs';
   styleUrls: ['./donate-dialog.component.css']
 })
 export class DonateDialogComponent implements IModalDialog {
-  private isOneTimePayment;
+  isOneTimePayment;
 
   actionButtons: IModalDialogButton[];
 

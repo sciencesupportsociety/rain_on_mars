@@ -13,8 +13,13 @@ import {Response} from '@angular/http';
       <span *ngIf="stripeTest.hasError('numberRequired')">Needs to be a number</span>
       <input type="text" formControlName="name" placeholder="Name on card">
       <div id="card-element" class="field"></div>
-      <button *ngIf="!isOneTimePayment" type="submit" (click)="investMonthly()">{{"invest monthly" | uppercase }}</button>
-      <button *ngIf="isOneTimePayment"  type="submit" (click)="invest()">{{"invest" | uppercase }}</button>
+
+      <button class="payment_button" *ngIf="!isOneTimePayment" type="submit" (click)="investMonthly()">
+        {{"invest monthly" | uppercase }}
+      </button>
+      <button class="payment_button" *ngIf="isOneTimePayment" type="submit" (click)="invest()">
+        {{"invest" | uppercase }}
+      </button>
     </form>
   `
 })
