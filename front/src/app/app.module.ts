@@ -15,6 +15,7 @@ import { MapComponent } from './components/map/map.component';
 import { DonateDialogComponent } from './components/donate-dialog/donate-dialog.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { GeneratorComponent } from './components/generator/generator.component';
+import { RoverComponent } from './components/rover/rover.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GeneratorComponent } from './components/generator/generator.component';
     DonateDialogComponent,
     MissionComponent,
     GeneratorComponent,
+    RoverComponent,
   ],
   imports: [
     BrowserModule,
