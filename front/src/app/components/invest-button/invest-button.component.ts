@@ -17,7 +17,6 @@ export class InvestButtonComponent implements OnInit {
 
   @Input() isOneTimePayment?;
 
-
   ngOnInit() {
   }
 

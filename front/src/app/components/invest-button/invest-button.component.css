@@ -1,14 +1,18 @@
 .invest-button {
-  height: 76px;
-  width: 331px;
+  height: 52px;
+  width: 11rem;
+  float: left;
+  margin-right: 1rem;
   border-radius: 4px;
   background-color: #52c41a;
   color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  line-height: 27px;
-  text-align: center;
   z-index: 1;
   cursor: pointer;
+
+  font-family: Play;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 21px;
+  text-align: center;
 }
