@@ -45,8 +45,9 @@ a:visited {
   background-color: #fefefe;
   top: 30%;
   left: 25%;
+  padding: 2rem;
   border: 1px solid #888;
-  width: 50%;
+  width: 500px;
   min-height: 100px;
   z-index: 3;
   font-family: "Play", sans-serif;
