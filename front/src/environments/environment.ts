@@ -13,7 +13,7 @@ export const environment = {
     storageBucket: 'rain-on-mars.appspot.com',
     messagingSenderId: '352420792528'
   },
-  host: 'http://localhost:5000',
+  host: 'http://dev.api.walmoo.com:5000',
 };
 
 /*
