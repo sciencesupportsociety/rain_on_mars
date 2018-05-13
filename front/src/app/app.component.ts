@@ -10,6 +10,7 @@ import { AppStateService } from './shared/app-state.service';
     <app-mission></app-mission>
     <app-map></app-map>
     <app-generator></app-generator>
+    <app-rover></app-rover>
     <br><br>
     </div>
   `,
