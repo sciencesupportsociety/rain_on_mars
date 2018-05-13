@@ -10,11 +10,12 @@ import {Response} from '@angular/http';
   selector: 'app-stripe-form',
   template: `
     <form style="width: 400px" novalidate [formGroup]="stripeTest">
-      <input type="number" formControlName="amount"><br>
-      <input type="text" formControlName="name" placeholder="Jane Doe">
+      <input type="text" formControlName="amount" placeholder="Amount" isNumber><br>
+      <span *ngIf="stripeTest.hasError('numberRequired')">Needs to be a number</span>
+      <input type="text" formControlName="name" placeholder="Name on card">
       <div id="card-element" class="field"></div>
-      <button type="button" (click)="investMonthly()">INVEST MONTHLY</button>
-      <button type="button" (click)="invest()">INVEST</button>
+      <button type="submit" (click)="investMonthly()">INVEST MONTHLY</button>
+      <button type="submit" (click)="invest()">INVEST</button>
     </form>
   `
 })
@@ -38,8 +39,8 @@ export class StripeFormComponent implements OnInit {
 
   ngOnInit() {
     this.stripeTest = this.fb.group({
-      name: ['Kriss', [Validators.required]],
-      amount: [5, [Validators.required]]
+      name: ['', [Validators.required]],
+      amount: [, [Validators.required]]
     });
     this.stripeService.elements(this.elementsOptions)
       .subscribe(elements => {
@@ -49,15 +50,18 @@ export class StripeFormComponent implements OnInit {
           this.card = this.elements.create('card', {
             style: {
               base: {
-                iconColor: '#fff',
-                color: '#fff',
-                lineHeight: '40px',
-                fontWeight: 300,
+                color: '#32325d',
+                lineHeight: '18px',
                 fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-                fontSize: '18px',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
                 '::placeholder': {
-                  color: '#CFD7E0'
+                  color: '#aab7c4'
                 }
+              },
+              invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
               }
             }
           });

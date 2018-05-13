@@ -49,6 +49,24 @@ a:visited {
   width: 50%;
   min-height: 100px;
   z-index: 3;
+  font-family: "Play", sans-serif;
+  font-weight: 100;
+  color: #3F4E59;
+}
+
+.closeDialog {
+  color: #aaaaaa;
+  top: 0;
+  float: right;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Play", sans-serif;
+}
+.closeDialog:hover,
+.closeDialog:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 h1 {
@@ -64,4 +82,42 @@ h2 {
 .mid {
   font-size: 20px;
   line-height: 26px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #32325d;
+  line-height: 18px;
+  font: 16px "Helvetica Neue", sans-serif;
+}
+input::-webkit-input-placeholder {
+  color: '#aab7c4'
+}
+
+.StripeElement {
+  background-color: white;
+  width: 100%;
+  height: 13px;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
 }

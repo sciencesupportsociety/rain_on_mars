@@ -24,11 +24,12 @@ export class InvestComponent implements OnInit {
 
   openModal() {
     this.modalService.openDialog(this.viewRef, {
-      title: 'Some modal title',
+      title: 'Invest in future',
       childComponent: DonateDialogComponent,
       settings: {
         overlayClass: 'overlayDonate',
         modalClass: 'donateDialog',
+        closeButtonClass: 'closeDialog',
       }
     });
   }

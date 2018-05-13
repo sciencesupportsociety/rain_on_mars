@@ -16,6 +16,7 @@ import { DonateDialogComponent } from './components/donate-dialog/donate-dialog.
 import { MissionComponent } from './components/mission/mission.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { RoverComponent } from './components/rover/rover.component';
+import { ValidatorsModule } from 'ngx-validators';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RoverComponent } from './components/rover/rover.component';
     NgxStripeModule.forRoot(environment.stripePublishable),
     ModalDialogModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ValidatorsModule
   ],
   entryComponents: [DonateDialogComponent],
   providers: [],
