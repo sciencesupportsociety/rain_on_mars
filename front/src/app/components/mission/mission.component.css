@@ -12,11 +12,5 @@
 .text-wrapper p {
   flex: 50%;
   min-width: 400px;
-  padding-right: 2rem;
-}
-
-.text-wrapper .short {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 26px;
+  padding-right: 3rem;
 }
