@@ -1,0 +1,40 @@
+.container {
+  margin: 5rem 0;
+  position: relative;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-wrapper.bottom .col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.col {
+  min-width: 400px;
+  padding-right: 3rem;
+}
+
+.col * {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.progress {
+  background-color: #fff;
+  padding: 0;
+}
+
+.progress .green {
+  background-color: #52c41a;
+  height: 4px;
+  width: 20%;
+}
+
+h1.green {
+  color: #52c41a;
+}
